@@ -9,7 +9,7 @@ module MerbDiscuss
     property :body,           Text
     property :created_at,     DateTime
     
-    belongs_to :topic
-    belongs_to :forum, :class_name => "Forum"
+    belongs_to :topic, :class_name => "MerbDiscuss::Topic"
+    belongs_to :forum, :class_name => "MerbDiscuss::Forum"
   end
 end

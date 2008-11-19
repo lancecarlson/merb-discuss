@@ -8,8 +8,8 @@ module MerbDiscuss
     property :forum_id,     Integer, :key => true
     property :title,        String
   
-    belongs_to :forum, :class_name => "Forum"
-    has n, :posts
+    belongs_to :forum, :class_name => "MerbDiscuss::Forum"
+    has n, :posts, :class_name => "MerbDiscuss::Post"
     
     attr_accessor :body
     

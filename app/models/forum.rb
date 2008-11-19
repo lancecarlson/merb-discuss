@@ -7,8 +7,8 @@ module MerbDiscuss
     property :description,    Text
     property :created_at,     DateTime
   
-    has n, :topics
-    has n, :posts
+    has n, :topics, :class_name => "MerbDiscuss::Topic"
+    has n, :posts, :class_name => "MerbDiscuss::Post"
     
     validates_present :title
   end
