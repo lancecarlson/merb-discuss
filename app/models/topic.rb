@@ -2,7 +2,7 @@ module MerbDiscuss
   class Topic
     include DataMapper::Resource
     
-    before :create, :build_initial_post
+    after :create, :build_initial_post
   
     property :id,           Serial
     property :forum_id,     Integer, :key => true
@@ -14,11 +14,7 @@ module MerbDiscuss
     attr_accessor :body
     
     def build_initial_post
-      post_attributes = {
-        :title => title
-        :body => body
-      }
-      self.posts.build(post_attributes)
+      self.posts.build(:title => title, :body => body)
     end
   end
 end

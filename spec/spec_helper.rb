@@ -10,6 +10,10 @@ Merb::Plugins.config[:merb_slices][:search_path]   = File.join(File.dirname(__FI
 # Require merb-discuss.rb explicitly so any dependencies are loaded
 require Merb::Plugins.config[:merb_slices][:search_path]
 
+require 'dm-core'
+ 
+DataMapper.setup(:default, "sqlite3::memory:")
+
 # Using Merb.root below makes sure that the correct root is set for
 # - testing standalone, without being installed as a gem and no host application
 # - testing from within the host application; its root will be used
@@ -19,6 +23,8 @@ Merb.start_environment(
   :environment => ENV['MERB_ENV'] || 'test',
   :session_store => 'memory'
 )
+
+DataMapper.auto_migrate!
 
 module Merb
   module Test
