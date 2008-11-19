@@ -1,0 +1,7 @@
+<h1>Create New Forum</h1>
+
+<%= error_messages_for @forum %>
+
+<%= form_for(@forum, :action => url(:forums)) do %>
+<%= partial :fields %>
+<% end =%>

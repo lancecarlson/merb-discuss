@@ -1,0 +1,15 @@
+TODO:
+
+- Fix MerbDiscuss.description and MerbDiscuss.version
+- Fix LICENSE with your name
+- Fix Rakefile with your name and contact info
+- Add your code to lib/merb-discuss.rb
+- Add your Merb rake tasks to lib/merb-discuss/merbtasks.rb
+
+Remove anything that you don't need:
+
+- app/controllers/main.rb MerbDiscuss::Main controller
+- app/views/layout/merb-discuss.html.erb
+- spec/controllers/main_spec.rb controller specs
+- public/* any public files
+- stubs/* any stub files

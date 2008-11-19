@@ -1,0 +1,10 @@
+<h1>Discussions</h1>
+
+<%= link_to "Create New Forum", url(:new_forum) if admin? %>
+<table>
+	<tr>
+		<th>Forum</th>
+		<th>Latest</th>
+	</tr>
+	<%= partial :table, :with => @forums, :as => "forum" %>
+</table>
